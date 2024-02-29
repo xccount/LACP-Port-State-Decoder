@@ -1,11 +1,15 @@
+import os
 from tabulate import tabulate
 
 print("LACP Actor Status Decoder", '\n')
+
+clear = lambda: os.system('cls')
 
 while True:
         print('')
         inpt = input("Type Port-State Code: ")
         if inpt == 'help':
+                clear()
                 print ('\n',tabulate([["LACP Activity", '0 - adfasdfasdf'],
                                  ['', '1 - adfadfasdf'],
                                 ["LACP Timeout", '0'],
@@ -74,7 +78,7 @@ while True:
                 else:
                     Expired = "No"
 
-
+                clear()
                 print ('\n',str.upper(inpt),"=",inpt_bin, '(Hexadecimal converted to Binary)','\n')
                 print (tabulate([[bin_arry[0], "LACP Activity", LACP_Activity],
                                 [bin_arry[1], "LACP Timeout", LACP_Timeout],
@@ -87,4 +91,7 @@ while True:
                                 headers=['Bit','FLAGS', 'STATE'], tablefmt="simple", colalign=("center",)))
                 continue
         else:
-                print("Type 'help' for the details.", '\n')
+                clear()
+                print("Type mentioed port-state hex code to decode.")
+                print("Type 'help' for the details.")
+                print("Press'ctrl+c' to close the application.", '\n')
