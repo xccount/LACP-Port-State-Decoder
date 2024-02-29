@@ -6,7 +6,23 @@ while True:
         print('')
         inpt = input("Type Port-State Code: ")
         if inpt == 'help':
-                print('yes')
+                print ('\n',tabulate([["LACP Activity", '0 - adfasdfasdf'],
+                                 ['', '1 - adfadfasdf'],
+                                ["LACP Timeout", '0'],
+                                ['', '1'],
+                                ["Aggregation", '0'],
+                                ['', '1'],
+                                ["Synchronization", '0'],
+                                ['', '1'],
+                                ["Collecting", '0'],
+                                ['', '1'],
+                                ["Distributing", '0'],
+                                ['', '1'],
+                                ["Defaulted", '0'],
+                                ['', '1'],
+                                ["PDU Expired", '0'],
+                                ['', '1']],
+                                headers=['FLAGS', 'STATES'], tablefmt="simple", colalign=("left",)))
                 continue
         
         if inpt:
@@ -68,7 +84,7 @@ while True:
                                 [bin_arry[5], "Distributing", Distributing],
                                 [bin_arry[6], "Defaulted", Defaulted],
                                 [bin_arry[7], "PDU Expired", Expired]],
-                                headers=['Bit','FLAGS', 'STATE']))
+                                headers=['Bit','FLAGS', 'STATE'], tablefmt="simple", colalign=("center",)))
                 continue
         else:
                 print("Type 'help' for the details.", '\n')
